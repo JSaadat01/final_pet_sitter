@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    {{ form.first_name.label }} {{ form.first_name }}
+    <br>
+    {{ form.hidden_tag() }}
+    {{ form.last_name.label }} {{ form.last_name }}
+    <br>
+    {{ form.hidden_tag() }}
+    {{ form.age.label }} {{ form.age }}
+    <br>
+    {{ form.hidden_tag() }}
+    {{ form.address.label }} {{ form.address }}
+    <br>
+    {{ form.hidden_tag() }}
+    {{ form.post_code.label }} {{ form.post_code }}
+    <br>
+
+    <br>
+    {{ form.submit }}
+    <br>
+</form>
+
+{% endblock body %}

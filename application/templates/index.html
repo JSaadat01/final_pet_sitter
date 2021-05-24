@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+{% for owner in all_owners %}
+    <br>
+    <p>(Owner {{ owner.id }}) | {{ owner.first_name }} {{ owner.last_name }} | {{ owner.age }} | {{ owner.address }} | {{owner.post_code}}
+    <br>
+    <p>
+        {% for pet in all_pets %}
+            {% if pet.owner_id == owner.id %}
+            <p>(Pet {{ pet.id }}) | {{ pet.name }} | {{ pet.age2 }} | {{ pet.address }} | {{ pet.post_code }}
+                <form action="{{ url_for("update_pet", pet_id=pet.id) }}">
+                    <input type="submit" value="Update Pet"> </input> 
+                    </form>
+            </p>
+            {% endif %}
+        {% endfor %}
+    </p>
+    <form action="{{ url_for("add_pet", owner_id=owner.id) }}">
+        <input type="submit" value="Add Pet"> </input> 
+    </form>
+
+    <form action="{{ url_for("delete", owner_id=owner.id) }}">
+        <input type="submit" value="Delete"> </input> 
+    </form>
+
+    <form action="{{ url_for("update", owner_id=owner.id) }}">
+        <input type="submit" value="Update User"> </input> 
+    </form>
+    </p>
+{% endfor %}
+
+{% endblock body %}
