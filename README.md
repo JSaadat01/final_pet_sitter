@@ -1,6 +1,6 @@
 # Pet Sitter App Project
 
-This is hte Readme.md file for my week-6 fundamental project for QA.
+This is the Readme.md file for my week-6 fundamental project for QA.
 
 ## Contents :
 * [Brief](#brief)
@@ -17,7 +17,7 @@ This is hte Readme.md file for my week-6 fundamental project for QA.
 * [Future Improvements](#future-improvements)
 * [Authors](#authors)
 
-## Brief / Specification
+## Brief
 I have been asked to produce a CRUD application which allows me utilize 'Create', 'Read', 'Update' and 'Delete' functions within an integrated relational database. In order to successfully fulfil this criteria, I have utilised supporting tools, methodologies and technologies that have been shown throughout the core modules covered during training.
 
 The purpose of this project is to emonstrate that I have learnt technical skills over the course of my first few weeks at QA.
@@ -57,12 +57,12 @@ To achieve the required specification, I have created a simple Pet Sitter app wh
 ### Database Structure
 Pictured below is an entity relationship diagram (ERD) showing the structure of the database.
 
-![ERD](https://imgur.com/a/8sHbNev)
+![ERD](images/ERD.jpg)
 
 As shown in the ERD, the app models a one-to-many relationship between owner and pet entities using an association table. This allows a user to create an owner entity and associate more than one pet with each owner.
 
 ### CI Pipeline
-![ci][ci]
+![CI](images/Harry.jpg)
 
  Above is the continuous integration pipeline with the associated frameworks and services related to them. This purpose of the pupline is to ensure the successive and automated development-to-deployment via automation of the integration processes. I can produce code on my local machine and push it to GitHub. The automation tools in place will then allow for new code to be pushed to Jenkins via a webhook to be automatically installed on the google cloud's Virtual Machine. At this point, the tests are then automatically executed and reports which illustrate the results are produced. In addition to this, A seperate testing environment for the app is  run within debugger mode which will allow for successive dynamic testing.
 
@@ -72,14 +72,15 @@ This process is handled by a Jenkins 'pipeline' job with incremental build stage
 * 'Test' (run pytest, produce coverage report) 
 * 'Run' (start the flask-app service on the local VM, belonging to systemctl)
 
-![buildstages][buildstages]
+![buildstages](images/Build.jpg)
 
 Once the app is considered stable, it is then pushed to an independent VM which is run on the cloud for deployment. This service is run using the Python-based HTTP web server Gunicorn, which is designed around the concept of 'workers'. This essentially reduces the workload by splitting the CPU resources of the VM equally. When users connect to the server, a worker is assigned to that connection with their dedicated resources, allowing the server to run faster for each user.
 
 ## Project Tracking
-In order to track the progress and criteria of my project Trello was utilized to track the progress of this particular project. You can find the link to my Trello board here: https://trello.com/b/ateuNpyv/petsitter
+In order to track the progress and criteria of my project Trello was utilized to for this particular project. Although it was optional and the specification wasn't too strict, I felt that Trello was appropriate due to its simplicity.
+You can find the link to my Trello board here:
 
-![trello][https://trello.com/b/ateuNpyv/petsitter]
+![trello](https://trello.com/b/ateuNpyv/petsitter)
 
 The board has been designed such that elements of the project move from left to right from their point of conception to being finished and fully implemented.
 * *Project Requirements*
@@ -102,22 +103,30 @@ The risk assessment for this project can be found in full here: https://drive.go
 
 Here's a quick screenshot:
 
-![RiskAssessment][https://imgur.com/a/UymDp8r]
+![RiskAssessment](images/risk_assessment.jpg)
 
 ## Testing
 pytest is used to run unit tests on the app. These are designed to assert that if a certain function is run, the output should be a known value. It is a method of authentication or validation to one's code. Jenkins produces console outputs (pictured below) that will inform the developer how many tests the code passed and which tests they failed.
 
 pytest also produces a coverage report to show how much of the code in the app has been successfully tested. Jenkins automatically moves this report to the 'templates' folder so that it can be navigated to in a browser. The following value: 66% is the result of running pytest on my web app.
 
-![coverage][https://imgur.com/a/XkVbvEv]
+![coverage](images/unit_testing.jpg)
 
 ## Front-End Design
 The front-end of the app is limited to very basic principles and coding at this stage, as the front-end is built purely with very simple HTML. It is largely functional and stable. When initially opening the app. The user lands on the route "/" where they are met with
 
-![landing page][https://imgur.com/a/WEpQpQJ]
+![image](images/1-home.JPG)
+![image](images/2-add_owner.JPG)
+![image](images/3-added_pet.JPG)
+![image](images/4-add_pet.JPG)
+![image](images/5-added_pet.JPG)
+![image](images/6-updated_pet.JPG)
+![image](images/7-updated_owner.JPG)
+![image](images/7-updated_owner.JPG)
+![image](images/8-deleted_owner_entry.JPG)
 
 ## Known Issues
-There are a few bugs with the current build of the app:
+There is one bug that I am aware of with the current build of the app:
 * If a user attempts to go to a url equal to an owner_id which is not yet present, the app will fail in Jenkins.
 ## Future Improvements
 * Filter posts by date, location and alphabetical order.
