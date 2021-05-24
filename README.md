@@ -74,20 +74,20 @@ This process is handled by a Jenkins 'pipeline' job with incremental build stage
 
 ![buildstages][buildstages]
 
-Once the app is considered stable, it is then pushed to a separate VM for deployment. This service is run using the Python-based HTTP web server Gunicorn, which is designed around the concept of 'workers' who split the CPU resources of the VM equally. When users connect to the server, a worker is assigned to that connection with their dedicated resources, allowing the server to run faster for each user.
+Once the app is considered stable, it is then pushed to an independent VM which is run on the cloud for deployment. This service is run using the Python-based HTTP web server Gunicorn, which is designed around the concept of 'workers'. This essentially reduces the workload by splitting the CPU resources of the VM equally. When users connect to the server, a worker is assigned to that connection with their dedicated resources, allowing the server to run faster for each user.
 
 ## Project Tracking
-Trello was used to track the progress of the project (pictured below). You can find the link to this board here: https://trello.com/b/ateuNpyv/planning-your-day-a-kanban-template
+In order to track the progress and criteria of my project Trello was utilized to track the progress of this particular project. You can find the link to my Trello board here: https://trello.com/b/ateuNpyv/petsitter
 
-![trello][https://trello.com/b/ateuNpyv/planning-your-day-a-kanban-template]
+![trello][https://trello.com/b/ateuNpyv/petsitter]
 
-The board has been designed such that elements of the project move from left to right from their point of conception to being finished and fully implemented. Each card is also colour-coded according to which element of the project it pertains. From left to right, these lists are:
+The board has been designed such that elements of the project move from left to right from their point of conception to being finished and fully implemented.
 * *Project Requirements*
    A list of requirements set out in the brief in order for this to be a successful project.
 * *Project Resources*
    List of relevant resources for quick access.
 * *User Stories*
-   Any functionality that is implemented into the project first begins as a user story. This keeps the development of every element of the web app focused on the user experience first.
+   Any functionality that is implemented into the project is intorduced as a user story. This ensures that the development of every element of the web app is focused entirely on the user experience first.
 * *Planning*
    The initial stages where a specific element (e.g. a block of code, a server, etc.) is being considered for implementation.
 * *In Progress*
@@ -105,11 +105,9 @@ Here's a quick screenshot:
 ![RiskAssessment][https://imgur.com/a/UymDp8r]
 
 ## Testing
-pytest is used to run unit tests on the app. These are designed to assert that if a certain function is run, the output should be a known value. Jenkins produces console outputs (pictured below) that will inform the developer how many tests the code passed and which tests they failed.
+pytest is used to run unit tests on the app. These are designed to assert that if a certain function is run, the output should be a known value. It is a method of authentication or validation to one's code. Jenkins produces console outputs (pictured below) that will inform the developer how many tests the code passed and which tests they failed.
 
-![pytestconsole][pytestconsole]
-
-pytest also produces a coverage report to show how much of the code in the app has been successfully tested. Jenkins automatically moves this report to the 'templates' folder so that it can be navigated to in a browser, as shown in the picture below.
+pytest also produces a coverage report to show how much of the code in the app has been successfully tested. Jenkins automatically moves this report to the 'templates' folder so that it can be navigated to in a browser. The following value: 66% is the result of running pytest on my web app.
 
 ![coverage][https://imgur.com/a/XkVbvEv]
 
@@ -142,9 +140,7 @@ Navigating to the 'Account' page allows them to view their account details, upda
 
 ## Known Issues
 There are a few bugs with the current build of the app:
-* If a user attempts to change their email to another email that already exists in the database, the app will inexplicably delete the account entirely
-* Certain errors do not appear on the front end when they should, for example: if the user inputs incorrect login information, they should receive an 'Incorrect Username' or 'Incorrect Password' warning – instead the page merely reloads
-
+* If a user attempts to go to a url equal to an owner_id which is not yet present, the app will fail in Jenkins.
 ## Future Improvements
 There are a number of improvements I would like to implement (outside of current bugs):
 * Implementation of the stars and constellation database to allow you to tag these celestial objects in observations
@@ -158,19 +154,4 @@ There are a number of improvements I would like to implement (outside of current
 * Users can customise their accounts more with profile pictures, add other users as friends, change the colour palette of the website, etc.
 
 ## Authors
-Harry Volker
-
-[erd1]: https://i.imgur.com/p9wji5S.png
-[ci]: https://i.imgur.com/2G7joFp.png
-[riskassessment]: https://i.imgur.com/btY8HRY.png
-[coverage]: https://i.imgur.com/WDaANiD.png
-[pytestconsole]: https://i.imgur.com/qaa3uzp.png
-[trello]: https://i.imgur.com/etDOlwa.png
-[buildstages]: https://i.imgur.com/ba7ntAo.png
-[homeloggedout]: https://i.imgur.com/91NbyWE.png
-[signup]: https://i.imgur.com/71f9E6y.png
-[login]: https://i.imgur.com/vzwaTtv.png
-[homeloggedin]: https://i.imgur.com/F4eXJKR.png
-[enterobservation]: https://i.imgur.com/WsBmL6k.png
-[homenewobservation]: https://i.imgur.com/NHxV8Gi.png
-[account]: https://i.imgur.com/oXDX1y3.png
+Jalal Saadat
