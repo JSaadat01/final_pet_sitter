@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h1> Pet Sitter App </h1>
+
+{% for owner in all_owners %}
+
+    <p>{{ owner.first_name }} {{ owner.last_name }} {{ owner.complete }}</p>
+
+{% endfor %}
+{% endblock body %}

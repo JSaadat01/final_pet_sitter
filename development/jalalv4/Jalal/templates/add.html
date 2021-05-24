@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    {{ form.first_name.label }} {{ form.first_name }}
+    <br>
+    {{ form.hidden_tag() }}
+    {{ form.last_name.label }} {{ form.last_name }}
+    <br>
+    {{ form.hidden_tag() }}
+    {{ form.age.label }} {{ form.age }}
+    <br>
+    {{ form.hidden_tag() }}
+    {{ form.address.label }} {{ form.address }}
+    <br>
+    {{ form.hidden_tag() }}
+    {{ form.post_code.label }} {{ form.post_code }}
+    <br>
+    <br>
+    {{ form2.hidden_tag() }}
+    {{ form2.name.label }} {{ form2.name }}
+    <br>
+    {{ form2.hidden_tag() }}
+    {{ form2.age2.label }} {{ form2.age2 }}
+    <br>
+    {{ form2.hidden_tag() }}
+    {{ form2.colour.label }} {{ form2.colour }}
+    <br>
+    {{ form2.hidden_tag() }}
+    {{ form2.type.label }} {{ form2.type }}
+    <br>
+    {{ form2.hidden_tag() }}
+    {{ form2.breed.label }} {{ form2.breed }}
+    <br>
+    {{ form2.hidden_tag() }}
+    {{ form2.address.label }} {{ form2.address }}
+    <br>
+    {{ form2.hidden_tag() }}
+    {{ form2.post_code.label }} {{ form2.post_code }}
+    <br>
+    {{ form.submit }}
+    <br>
+</form>
+
+{% endblock body %}

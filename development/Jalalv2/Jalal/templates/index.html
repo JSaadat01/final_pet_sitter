@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h1> Pet Sitter App </h1>
+
+{% for owner in all_owners %}
+
+    <p>({{ owner.id }}) | {{ owner.first_name }} {{ owner.last_name }} | {{ owner.age }} | {{ owner.address }} | {{owner.post_code}}
+    <br>
+    {% if owner.complete == False %}
+    <form action="{{ url_for("complete", owner_id=owner.id) }}">
+        <input type="submit" value="Owner Currently Complete"> &#9989 </input>
+    </form>
+    {% endif %}
+    {% if owner.complete == True %}
+    <form action="{{ url_for("Incomplete", owner_id=owner.id) }}">
+        <input type="submit" value="Owner Currently InComplete"> </input>
+    {% endif %}
+    </p>
+
+{% endfor %}
+{% endblock body %}
