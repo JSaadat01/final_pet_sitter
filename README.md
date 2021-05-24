@@ -57,13 +57,22 @@ To achieve the required specification, I have created a simple Pet Sitter app wh
 ### Database Structure
 Pictured below is an entity relationship diagram (ERD) showing the structure of the database.
 
+<<<<<<< HEAD
 ![ERD](images/ERD.jpg)
+=======
+ERD - (https://imgur.com/a/8sHbNev)
+>>>>>>> 7faaf7414d89b3dc40e57f7e70075ebc00c42b52
 
 As shown in the ERD, the app models a one-to-many relationship between owner and pet entities using an association table. This allows a user to create an owner entity and associate more than one pet with each owner.
 
 ### CI Pipeline
+<<<<<<< HEAD
 ![CI](images/Harry.jpg)
 
+=======
+CI Pipeline - (https://camo.githubusercontent.com/9d863508f3423eb1628f569adcc0972e26747bcbfb924c745fd471303e0393f0/68747470733a2f2f692e696d6775722e636f6d2f3247376a6f46702e706e67
+) - Produced by Harry Volker
+>>>>>>> 7faaf7414d89b3dc40e57f7e70075ebc00c42b52
  Above is the continuous integration pipeline with the associated frameworks and services related to them. This purpose of the pupline is to ensure the successive and automated development-to-deployment via automation of the integration processes. I can produce code on my local machine and push it to GitHub. The automation tools in place will then allow for new code to be pushed to Jenkins via a webhook to be automatically installed on the google cloud's Virtual Machine. At this point, the tests are then automatically executed and reports which illustrate the results are produced. In addition to this, A seperate testing environment for the app is  run within debugger mode which will allow for successive dynamic testing.
 
 This process is handled by a Jenkins 'pipeline' job with incremental build stages. The perfect design of Jenkins is such that it will output detailed information for a failed job. For example, if a previous build stage fails, the job will fail altogether and provide you with detailed information as to where this occurred. The more modular you make the system is made, the easier it is to pinpoint where the code is failing. This is because more incremental stages makes distinguishing easier. As pictured below, the four build stages are:
@@ -72,13 +81,21 @@ This process is handled by a Jenkins 'pipeline' job with incremental build stage
 * 'Test' (run pytest, produce coverage report) 
 * 'Run' (start the flask-app service on the local VM, belonging to systemctl)
 
+<<<<<<< HEAD
 ![buildstages](images/Build.jpg)
+=======
+Better understanding of this can be seen by looking at the "Development" folder I have added which shows my progress where i started from scratch right up to deployment.
+>>>>>>> 7faaf7414d89b3dc40e57f7e70075ebc00c42b52
 
 Once the app is considered stable, it is then pushed to an independent VM which is run on the cloud for deployment. This service is run using the Python-based HTTP web server Gunicorn, which is designed around the concept of 'workers'. This essentially reduces the workload by splitting the CPU resources of the VM equally. When users connect to the server, a worker is assigned to that connection with their dedicated resources, allowing the server to run faster for each user.
 
 ## Project Tracking
+<<<<<<< HEAD
 In order to track the progress and criteria of my project Trello was utilized to for this particular project. Although it was optional and the specification wasn't too strict, I felt that Trello was appropriate due to its simplicity.
 You can find the link to my Trello board here:
+=======
+In order to track the progress and criteria of my project Trello was utilized to track the progress of this particular project. You can find the link to my Trello board here:
+>>>>>>> 7faaf7414d89b3dc40e57f7e70075ebc00c42b52
 
 ![trello](https://trello.com/b/ateuNpyv/petsitter)
 
