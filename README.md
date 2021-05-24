@@ -112,46 +112,17 @@ pytest also produces a coverage report to show how much of the code in the app h
 ![coverage][https://imgur.com/a/XkVbvEv]
 
 ## Front-End Design
-The front-end of the app is rudimentary at this stage, as the front-end is built purely with very simple HTML. It is largely functional and stable, however.
+The front-end of the app is limited to very basic principles and coding at this stage, as the front-end is built purely with very simple HTML. It is largely functional and stable. When initially opening the app. The user lands on the route "/" where they are met with
 
-When the user navigates to the URL, they are directed to the home page:
-
-![homeloggedout][homeloggedout]
-
-They are then able to log in or register an account:
-
-![signup][signup]
-
-![login][login]
-
-Once they are logged in, they now have access to the 'Enter Observation' page and their account page:
-
-![homeloggedin][homeloggedin]
-
-Navigating to the 'Enter Observation' page allows them to post an observation and optionally tag up to two other observers, which will appear at the top of the home page:
-
-![enterobservation][enterobservation]
-
-![homenewobservation][homenewobservation]
-
-Navigating to the 'Account' page allows them to view their account details, update them and delete the account if they so desire. Deleting an account will also delete any observation they are associated with:
-
-![account][account]
+![landing page][https://imgur.com/a/WEpQpQJ]
 
 ## Known Issues
 There are a few bugs with the current build of the app:
 * If a user attempts to go to a url equal to an owner_id which is not yet present, the app will fail in Jenkins.
 ## Future Improvements
-There are a number of improvements I would like to implement (outside of current bugs):
-* Implementation of the stars and constellation database to allow you to tag these celestial objects in observations
-* Allow the user to tag an indefinite number of users in an observation, rather than a maximum of two
-* Filter observation posts by user, date, location, etc.
+* Filter posts by date, location and alphabetical order.
 * Aesthetic overhaul, to make the front-end both more appealing *and* more functional
-   * The aesthetics of an interface are important for the functionality of a web app, insofar as a user can only use functionality that they understand. Confusing aesthetic design will obscure the functionality of the app
-   * This would be implemented using CSS, the easiest approach being with Bootstrap
-* Implementation of other solar system objects that require realtime updates, e.g. planets whose locations in the sky are always changing
-   * This would probably be best achieved by referring to another publicly-available database
-* Users can customise their accounts more with profile pictures, add other users as friends, change the colour palette of the website, etc.
+   * The aesthetics of an interface is incredibly important for the functionality of a web app, a user is only able to use a web app to the point at which they understand. Confusing aesthetic design will obscure the functionality of the app and poor GUI may make using the app difficult.
 
 ## Authors
 Jalal Saadat
